@@ -149,3 +149,12 @@ h3 {
     color: #382915;
     background-color:#a4ef7c;
 }
+
+div.row.pagetitle {
+    text-align: right;
+    color: #e1f765;
+}
+h1 {
+    letter-spacing: 6px;
+    font-size: 60px;
+}
