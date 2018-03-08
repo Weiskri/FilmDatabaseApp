@@ -7,19 +7,31 @@
 <h2>Directors</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="@Url.Action("Create", "Directors")" class="btn glyph-details">
+        <span class="glyphicon glyphicon-plus"></span>
+    </a>
+    @*@Html.ActionLink("Create New", "Create")*@
 </p>
 
 <div class="row">
     @foreach (var item in Model)
     {
-        <div class="col-sm-6 col-md-4">
+        <div class="col-sm-6 col-md-4 animated fadeInDown">
             <div class="thumbnail">
                 <div class="caption">
                     <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.DirectorID }) |
+                    <a href="@Url.Action("Edit", "Directors", new { id = item.DirectorID })" class="btn glyph">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="@Url.Action("Details", "Directors", new { id = item.DirectorID })" class="btn glyph">
+                        <span class="glyphicon glyphicon-folder-open"></span>
+                    </a>
+                    <a href="@Url.Action("Delete", "Directors", new { id = item.DirectorID })" class="btn glyph">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.DirectorID }) |
                     @Html.ActionLink("Details", "Details", new { id = item.DirectorID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.DirectorID })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.DirectorID })*@
                 </div>
             </div>
         </div>

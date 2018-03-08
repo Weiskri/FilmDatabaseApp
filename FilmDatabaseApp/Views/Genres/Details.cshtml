@@ -9,18 +9,19 @@
 <div>
     <h4>Genre</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Type)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Type)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.GenreID }) |
-    @Html.ActionLink("Back to List", "Index")
+    <div class="panel panel-default animated fadeInDown">
+        <div class="panel-heading">
+            <h3 class="panel-title">@Html.DisplayFor(model => model.Type)</h3>
+        </div>
+        <div class="panel-body">
+            <a href="@Url.Action("Edit", "Genres", new { id = Model.GenreID })" class="btn glyph">
+                <span class="glyphicon glyphicon-pencil"></span>
+            </a>
+            <a href="@Url.Action("Index", "Genres")" class="btn glyph">
+                <span class="glyphicon glyphicon-list-alt"></span>
+            </a>
+        </div>
+    </div>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.GenreID }) |*@
+    @*@Html.ActionLink("Back to List", "Index")*@
 </p>

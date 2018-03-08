@@ -7,10 +7,13 @@
 <h2>Movies</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="@Url.Action("Create", "Movies")" class="btn glyph-details">
+        <span class="glyphicon glyphicon-plus"></span>
+    </a>
+    @*@Html.ActionLink("Create New", "Create")*@
 </p>
 
-<div class="row">
+<div class="row movies-index">
     @foreach (var item in Model)
     {
         <div class="col-sm-6 col-md-4">
@@ -25,9 +28,21 @@
                         Rating: @Html.DisplayFor(modelItem => item.Rating)<br />
                         Award Winner: @Html.DisplayFor(modelItem => item.WonAward)
                     </p>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.MovieID }) |
+                    <span>
+                        <a href="@Url.Action("Edit", "Movies", new { id = item.MovieID })" class="btn glyph">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </a>
+                        <a href="@Url.Action("Details", "Movies", new { id = item.MovieID })" class="btn glyph">
+                            <span class="glyphicon glyphicon-folder-open"></span>
+                        </a>
+                        <a href="@Url.Action("Delete", "Movies", new { id = item.MovieID })" class="btn glyph">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </a>
+                    </span>
+
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.MovieID }) |
                     @Html.ActionLink("Details", "Details", new { id = item.MovieID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.MovieID })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.MovieID })*@
                 </div>
             </div>
         </div>

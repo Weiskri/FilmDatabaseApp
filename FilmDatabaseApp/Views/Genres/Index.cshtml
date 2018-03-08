@@ -7,19 +7,31 @@
 <h2>Genres</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="@Url.Action("Create", "Genres")" class="btn glyph-details">
+        <span class="glyphicon glyphicon-plus"></span>
+    </a>
+    @*@Html.ActionLink("Create New", "Create")*@
 </p>
 
-<div class="row">
+<div class="row animated fadeInDown">
     @foreach (var item in Model)
     {
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
                 <div class="caption">
                     <h3>@Html.DisplayFor(modelItem => item.Type)</h3>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.GenreID }) |
+                    <a href="@Url.Action("Edit", "Genres", new { id = item.GenreID })" class="btn glyph">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="@Url.Action("Details", "Genres", new { id = item.GenreID })" class="btn glyph">
+                        <span class="glyphicon glyphicon-folder-open"></span>
+                    </a>
+                    <a href="@Url.Action("Delete", "Genres", new { id = item.GenreID })" class="btn glyph">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.GenreID }) |
                     @Html.ActionLink("Details", "Details", new { id = item.GenreID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.GenreID })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.GenreID })*@
                 </div>
             </div>
         </div>
